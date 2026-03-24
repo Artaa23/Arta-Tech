@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ARTATECH | Engineering Vault V.2.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">ARTA<span>TECH</span></div>
+        <div class="menu-label">CATEGORIES</div>
+        <div class="sidebar-tabs">
+            <button class="side-tab active" onclick="filterCategory('all', this)"><span class="icon">📦</span> <span>Semua</span></button>
+            <button class="side-tab" onclick="filterCategory('structural', this)"><span class="icon">🏗️</span> <span>Struktur</span></button>
+            <button class="side-tab" onclick="filterCategory('autodesk', this)"><span class="icon">📐</span> <span>Autodesk/BIM</span></button>
+            <button class="side-tab" onclick="filterCategory('geotechnical', this)"><span class="icon">⛰️</span> <span>Geoteknik</span></button>
+            <button class="side-tab" onclick="filterCategory('water', this)"><span class="icon">🌊</span> <span>Air (Hidro)</span></button>
+            <button class="side-tab" onclick="filterCategory('transport', this)"><span class="icon">🚗</span> <span>Transportasi</span></button>
+            <button class="side-tab" onclick="filterCategory('gis', this)"><span class="icon">🗺️</span> <span>GIS</span></button>
+            <button class="side-tab" onclick="filterCategory('management', this)"><span class="icon">📊</span> <span>Manajemen</span></button>
+            <button class="side-tab" onclick="filterCategory('rendering', this)"><span class="icon">🎨</span> <span>Rendering</span></button>
+        </div>
+        <div class="sidebar-footer">
+            <a href="https://wa.me/6282144457320" target="_blank" class="nav-btn-wa">Request Soft</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari software..." onkeyup="searchSoftware()">
+                <kbd>/</kbd>
+            </div>
+            <div class="server-status">
+                <span class="dot"></span> <span class="status-text">SYSTEM ONLINE</span>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="grid" id="softwareGrid">
+                
+                <div class="card" data-category="structural">
+                    <div class="card-header"><div class="vendor-tag">CSI</div><div class="hot-badge">TOP</div></div>
+                    <h3>SAP2000 V26</h3>
+                    <p>Analisis struktur elemen hingga tingkat lanjut. Versi V26 Full Jamu.</p>
+                    <div class="card-actions">
+                        <a href="https://pixeldrain.com/u/CCaPRMCU" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('SAP2000 V26', ['Install software, pilih On-prem Standalone (Close jika minta key)', 'Run as Admin SAP_v26_kg (Pass: lavteam.org)', 'Copy lservrc & SentinelRMSCore.dll', 'Paste ke: C:\\Program Files\\Computers and Structures\\SAP2000 26\\', 'Paste juga ke direktori \\CSiLicensing'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="structural">
+                    <div class="card-header"><div class="vendor-tag">CSI</div><div class="hot-badge">PRO</div></div>
+                    <h3>ETABS 22</h3>
+                    <p>Khusus desain gedung bertingkat tinggi. Integrasi analisis terbaik.</p>
+                    <div class="card-actions">
+                        <a href="https://pixeldrain.com/u/oC7DXVSh" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('ETABS 22', ['Install, pilih On-prem Standalone', 'Exit software, Run as Admin Etabs_v22_kg (Pass: lavteam.org)', 'Copy lservrc & SentinelRMSCore.dll', 'Paste ke folder ETABS 22 & folder CSiLicensing'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="autodesk">
+                    <div class="card-header"><div class="vendor-tag">AUTODESK</div><div class="hot-badge">NEW</div></div>
+                    <h3>Civil 3D 2024</h3>
+                    <p>Permodelan BIM untuk infrastruktur jalan, drainase, dan lahan.</p>
+                    <div class="card-actions">
+                        <a href="https://pixeldrain.com/u/YqGb9K18" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Civil 3D 2024', ['Install komponen, Abaikan reboot', 'Tunggu install update otomatis selesai', 'Jalankan AdskNLM di folder Jamu sampai completed', 'Pilih Use a network license saat buka app'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="gis">
+                    <div class="card-header"><div class="vendor-tag">ESRI</div></div>
+                    <h3>ArcGIS Pro 3.5</h3>
+                    <p>Standard industri GIS profesional untuk analisis spasial mendalam.</p>
+                    <div class="card-actions">
+                        <a href="https://docs.google.com/document/d/1_52eSob9FZ1O3-2cdU2goDsiouUDKcx9WUtlHVM7n1A/edit?usp=sharing" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('ArcGIS Pro', ['Install ArcGISPro_35.exe (Butuh runtime 6.0)', 'Install patches berurutan', 'Copy isi Jamu ke folder Pro\\bin (Replace)', 'Double click agp.reg setelah paste'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="autodesk">
+                    <div class="card-header"><div class="vendor-tag">AUTODESK</div></div>
+                    <h3>Revit 2024</h3>
+                    <p>Pemodelan BIM untuk struktur, arsitektur, dan MEP terintegrasi.</p>
+                    <div class="card-actions">
+                        <a href="https://docs.google.com/document/d/1A4wtAoKyNrg_R08hIp6eebYAcSF7qRKXa9Y3_pqA1VU/edit?usp=sharing" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Revit 2024', ['Mount file ISO, jalankan setup', 'Abaikan reboot, jalankan AdskNLM di folder Jamu', 'Buka Revit, pilih Use a network license'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="rendering">
+                    <div class="card-header"><div class="vendor-tag">ACT-3D</div><div class="hot-badge">ART</div></div>
+                    <h3>Lumion Pro</h3>
+                    <p>Rendering visualisasi 3D real-time super cepat dan estetik.</p>
+                    <div class="card-actions">
+                        <a href="https://drive.google.com/file/d/1ZI7_7Q-x7MgLBYt7iwScxiRXSvxpLYWX/view?usp=sharing" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Lumion Pro', ['Block Hosts file', 'Run Setup Lumion', 'Copy Crack ke folder instalasi'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="gis">
+                    <div class="card-header"><div class="vendor-tag">BLUE MARBLE</div></div>
+                    <h3>Global Mapper</h3>
+                    <p>GIS All-in-one untuk LiDAR, kontur, dan analisis terrain.</p>
+                    <div class="card-actions">
+                        <a href="https://pixeldrain.com/u/3VPZK1Gf" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Global Mapper', ['Extract RAR', 'Copy isi folder Crack ke folder installasi'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="gis">
+                    <div class="card-header"><div class="vendor-tag">OPEN SOURCE</div></div>
+                    <h3>QGIS 3.44</h3>
+                    <p>Software pemetaan GIS open-source yang powerfull.</p>
+                    <div class="card-actions">
+                        <a href="https://dl3.qgis.org/downloads/QGIS-OSGeo4W-3.44.8-1.msi" target="_blank" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('QGIS', ['Cukup jalankan setup .msi seperti biasa'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="geotechnical">
+                    <div class="card-header"><div class="vendor-tag">SEEQUENT</div></div>
+                    <h3>PLAXIS 2D/3D</h3>
+                    <p>Analisis elemen hingga stabilitas tanah.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('PLAXIS', ['Install Bentley Client', 'Activate Emulator'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="structural">
+                    <div class="card-header"><div class="vendor-tag">BENTLEY</div></div>
+                    <h3>STAAD.Pro</h3>
+                    <p>Analisis desain struktur baja/beton internasional.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('STAAD.Pro', ['Install Connection Client', 'Apply Patch'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="structural">
+                    <div class="card-header"><div class="vendor-tag">MIDAS IT</div></div>
+                    <h3>Midas Civil</h3>
+                    <p>Desain jembatan tipe kompleks.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Midas Civil', ['Install Setup', 'Setup License Server'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="geotechnical">
+                    <div class="card-header"><div class="vendor-tag">SEEQUENT</div></div>
+                    <h3>GeoStudio</h3>
+                    <p>Analisis rembesan dan stabilitas lereng.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('GeoStudio', ['Install Seequent Hub', 'Use Seequent ID'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="geotechnical">
+                    <div class="card-header"><div class="vendor-tag">MIDAS IT</div></div>
+                    <h3>Midas GTS NX</h3>
+                    <p>Analisis geoteknik 3D terowongan.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('GTS NX', ['Install Driver Hardware Key', 'Setup Environment'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="geotechnical">
+                    <div class="card-header"><div class="vendor-tag">ROCSCIENCE</div></div>
+                    <h3>Slide 2D</h3>
+                    <p>Stabilitas lereng Limit Equilibrium.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Slide', ['Run Setup', 'Copy Jamu/Med'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="geotechnical">
+                    <div class="card-header"><div class="vendor-tag">ITASCA</div></div>
+                    <h3>FLAC 2D/3D</h3>
+                    <p>Analisis numerik batuan kritis.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('FLAC', ['Check Dongle Emulator', 'Install Program'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="water">
+                    <div class="card-header"><div class="vendor-tag">US ARMY</div></div>
+                    <h3>HEC-RAS</h3>
+                    <p>Aliran sungai 1D dan 2D.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('HEC-RAS', ['Download Official', 'Install Setup'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="water">
+                    <div class="card-header"><div class="vendor-tag">EPA</div></div>
+                    <h3>EPANET</h3>
+                    <p>Pipa distribusi air bersih.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('EPANET', ['Install Official (Free)'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="water">
+                    <div class="card-header"><div class="vendor-tag">EPA</div></div>
+                    <h3>SWMM</h3>
+                    <p>Drainase dan limpasan hujan.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('SWMM', ['Install Official (Free)'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="water">
+                    <div class="card-header"><div class="vendor-tag">DELTARES</div></div>
+                    <h3>SOBEK</h3>
+                    <p>Permodelan banjir skala besar.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('SOBEK', ['Install License Manager', 'Setup App'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="transport">
+                    <div class="card-header"><div class="vendor-tag">PTV GROUP</div></div>
+                    <h3>Vissim / Vistro</h3>
+                    <p>Mikrosimulasi lalu lintas.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Vissim', ['Install Codemeter', 'Import License'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="transport">
+                    <div class="card-header"><div class="vendor-tag">CALIPER</div></div>
+                    <h3>TransCAD</h3>
+                    <p>GIS khusus transportasi.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('TransCAD', ['Install Setup', 'Copy License File'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="management">
+                    <div class="card-header"><div class="vendor-tag">MICROSOFT</div></div>
+                    <h3>MS. Project</h3>
+                    <p>Manajemen penjadwalan proyek.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('MS Project', ['Install Office', 'Activate'])">How to Install</button>
+                    </div>
+                </div>
+
+                <div class="card" data-category="management">
+                    <div class="card-header"><div class="vendor-tag">ORACLE</div></div>
+                    <h3>Primavera P6</h3>
+                    <p>Manajemen proyek kompleks.</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-cyber"><span class="btn-text">GET FILE</span><div class="btn-icon">⬇️</div></a>
+                        <button class="btn-guide" onclick="openGuide('Primavera P6', ['Setup DB SQL', 'Run P6 Installer'])">How to Install</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-header"><h2 id="modalTitle">GUIDE.DOC</h2></div>
+            <div id="modalSteps"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
